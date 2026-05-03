@@ -1,7 +1,7 @@
 # landcover-lake-ice-project
 This repository contains Quarto-based R code and supporting data for the article "Elucidating the extent of the influence of land cover on ice phenology across lakes in the northern contiguous United States: Implications for ecosystem management"
 
-[![DOI](https://zenodo.org/badge/DOI/XX.XXXX/zenodo.XXXXXXX.svg)](https://doi.org/XX.XXXX)
+[![DOI](https://zenodo.org/badge/DOI/XX.XXXX/zenodo.XXXXXXX.svg)](https://doi.org/XX.XXXX/zenodo.XXXXXXX)
 
 
 🌐 **Rendered HTML report:**  
