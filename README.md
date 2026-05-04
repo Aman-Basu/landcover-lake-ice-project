@@ -5,7 +5,7 @@ This repository contains Quarto-based R code and supporting data for the article
 
 
 🌐 **Rendered HTML report:**  
-[View the Quarto report](https://aman-basu.github.io/landcover-lake-ice-project/scripts/index.html)
+[View the analysis report](https://aman-basu.github.io/landcover-lake-ice-project/scripts/index.html)
 
 ## Project overview
 
