@@ -9,6 +9,7 @@ This folder contains the spatial, tabular, and model-output datasets used in the
 - `ice_phenology_all.csv`: Lake-level annual ice-on and ice-off phenology records used for regional lake ice analysis.  
   > 🚨 **Note:** <span style="color:red">This file will be shared publicly soon.</span>
 - `ice_dur_ml.csv`: Lake-year modeling dataset used to predict ice duration from meteorological, land-cover, and morphometric predictors.
+  > 🚨 **Note:** <span style="color:red">This file will be shared publicly soon.</span>
 - `model/`: Saved random forest model outputs, variable importance results, and partial dependence data used to reproduce local-scale modeling figures.
 
 The datasets support two main parts of the analysis:
