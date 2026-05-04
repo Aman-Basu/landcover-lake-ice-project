@@ -44,5 +44,6 @@ rsconnect/
 /.quarto/
 **/*.quarto_ipynb
 scripts/rosm.cache/
+nosync_folder/
 
 .DS_Store
