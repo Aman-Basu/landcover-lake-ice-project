@@ -1238,7 +1238,7 @@ r_sq <-eval_results(out$truth,out$response)[,1]
 rmse_ice_dur <- eval_results(out$truth,out$response)[,2]
 mae_ice_dur <- eval_results(out$truth,out$response)[,3]
 
-out %>%
+model_performance <- out %>%
   ggplot(aes(response, truth))+
   geom_point(aes(fill = "Data"))+
   geom_smooth(method = "lm", se=FALSE, aes(color = "Fit"))+
@@ -1249,7 +1249,7 @@ out %>%
            color="Maroon")+
   annotate(geom="text", x= -100+150, y=161+30, label=print(paste0("RMSE = ", round(rmse_ice_dur, 2))),
            color="Maroon")+
-  labs(x= "Predicted dates",y= "Observed dates", fill = "", col="", title = "Ice-duration model")+
+  labs(x= "Predicted dates",y= "Observed dates", fill = "", col="", title = "Ice duration model")+
   theme(
     axis.text = element_text(size = rel(1.5)),
     axis.title.y = element_text(size = rel(2)),
@@ -1259,6 +1259,8 @@ out %>%
     plot.title = element_text(size=22))+
   scale_color_manual( values = c("Fit" = "red",
                                  "X = Y" = "blue"))
+
+model_performance
 ```
 
 Create variable importance plots for individual variables and grouped variables, showing both the mean RMSE loss and the distribution of RMSE loss across permutations. The following code processes the variable importance results to create bar plots with overlaid boxplots for individual variables and grouped variables, and customizes the appearance of the plots.
@@ -1429,7 +1431,7 @@ q_dev_ice_dur <- tibble(
 pdp_dev <- dev_pdp_plot %>% ggplot(aes(`Developed land %`,`Ice duration (days)`, colour = state))+
   geom_line(linewidth = 3)+
   scale_color_manual(values = c("#005AB5"))+
-  scale_y_continuous(breaks=seq(94,224,1))+
+  scale_y_continuous(breaks=seq(94,224,2))+
   geom_segment(data = q_dev_ice_dur, aes(x = x, xend = x, y = 121, yend = 121.5),
                color = "#005AB5", linetype = "solid", linewidth = 1)+
   geom_segment(aes(x = 0, xend = max(q_dev_ice_dur$x), y = 121.25, yend = 121.25),
@@ -1538,7 +1540,7 @@ q_tave_ice_dur <- tibble(
 pdp_tave <- tave_pdp_plot %>% ggplot(aes(`Average temperature`,`Ice duration (days)`, colour = state))+
   geom_line(linewidth = 3)+
   scale_color_manual(values = c("#005AB5"))+
-  scale_y_continuous(breaks=seq(80,224,10))+
+  scale_y_continuous(breaks=seq(80,224,20))+
   geom_segment(data = q_tave_ice_dur, aes(x = x, xend = x, y = 80, yend = 84),
                color = "#005AB5", linetype = "solid", linewidth = 1)+
   geom_segment(aes(x = -5.25, xend = max(q_tave_ice_dur$x), y = 82, yend = 82),
@@ -1741,7 +1743,7 @@ pdp_area <- area_pdp_plot %>%
   ggplot(aes(`Lake area (km²)`,`Ice duration (days)`, colour = state)) +
   geom_line(linewidth = 3) +
   scale_color_manual(values = c("#005AB5")) +
-  scale_y_continuous(breaks = seq(94, 224, 1)) +
+  scale_y_continuous(breaks = seq(94, 224, 2)) +
   geom_segment(data = q_area_ice_dur, 
                aes(x = x, xend = x, y = 119.75, yend = 120.25),
                color = "#005AB5", linetype = "solid", linewidth = 1) +
